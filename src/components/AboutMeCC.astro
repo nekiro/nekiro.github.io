@@ -1,0 +1,66 @@
+---
+// data imports
+import workExperience from "@/data/Jobs.ts";
+import education from "@/data/education.ts";
+import languages from "../data/languages.ts";
+
+// component imports
+import JobDetails from "./JobDetails.astro";
+import EduDetail from "./EduDetail.astro";
+---
+
+<div class="relative flex flex-col gap-8 text-n700 dark:text-n200 w-full mt-10 px-4">
+	{/*Description or About me -- Section*/}
+	<div class="mb-8">
+		<p>
+			I'm Marcin, a programmer working with C++, Lua, and JavaScript/TypeScript. Started coding in 2015 making game bots, then got into C++ while
+			building a 2D MMORPG server. Now I'm focused on web development - backend, frontend, and testing. I love learning new tech and figuring out how
+			things work.
+		</p>
+	</div>
+</div>
+{/*Work experience section*/}
+<div class="mb-8">
+	<h2 class="text-3xl font-bold mb-4">Work Experience</h2>
+	<div class="flex flex-col gap-6">
+		{workExperience.map((job) => <JobDetails jobData={job} />)}
+	</div>
+</div>
+{/*Education section*/}
+<div class="mb-8">
+	<h2 class="text-3xl font-bold mb-4">Education</h2>
+	<div class="flex flex-col gap-6">
+		{education.map((edu) => <EduDetail eduData={edu} />)}
+	</div>
+</div>
+{/*Skills section*/}
+<div class="mb-8">
+	<h2 class="text-3xl font-bold mb-4">Skills</h2>
+	<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+		<img
+			src="https://go-skill-icons.vercel.app/api/icons?i=js,ts,nodejs,nextjs,prisma,react,express,nestjs,bots,electron,html,jest,babel&theme=dark&perline=5"
+			alt="Skills"
+			draggable="false"
+		/>
+		<img
+			src="https://go-skill-icons.vercel.app/api/icons?i=mysql,cpp,lua,bash,cmake,git,githubactions&theme=dark&perline=5"
+			alt="Other skills"
+			draggable="false"
+		/>
+	</div>
+</div>
+{/*Languages section*/}
+<div class="mb-8">
+	<h2 class="text-2xl font-bold mb-4">Languages</h2>
+	<div class="flex flex-col gap-2">
+		{
+			languages.map((lang) =>
+				lang.show ? (
+					<p>
+						{lang.name} - {lang.level}
+					</p>
+				) : null
+			)
+		}
+	</div>
+</div>
