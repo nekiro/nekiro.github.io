@@ -1,0 +1,132 @@
+---
+title: ShibaACC
+summary: Automatic Account Creator (AAC) for Open Tibia Servers written in Next.js. A modern web application providing secure account management, character creation, and server status monitoring for OT communities.
+tags:
+  - Next.js
+  - TypeScript
+  - MySQL
+  - Node.js
+  - Gaming
+startDate: 2023-01-15
+endDate: 2024-03-20
+author: Marcin Jałocha
+url: https://github.com/nekiro/shibaac
+cover: "./images/shibaac/shibaac_cover.png"
+ogImage: "./images/shibaac/shibaac_cover.png"
+---
+
+## Table of Contents
+
+1. [Overview](#overview)
+2. [Role](#role)
+3. [Problem](#problem)
+4. [Goal](#goal)
+5. [Solution](#solution)
+6. [Technical Implementation](#technical-implementation)
+7. [Challenges and Learnings](#challenges-and-learnings)
+8. [Final Thoughts](#final-thoughts)
+
+---
+
+## Overview
+
+**ShibaACC** is a modern Automatic Account Creator (AAC) built for Open Tibia Servers, providing a complete web-based solution for OT communities. Built with **Next.js**, **TypeScript**, and **MySQL**, it offers secure account management, real-time server monitoring, and an intuitive user experience.
+
+The project aims to modernize the traditional AAC experience by providing encrypted cookies, secure APIs, and a responsive design that works across all devices.
+
+---
+
+## 👨‍💻 Role
+
+**Lead Developer** and **System Architect**
+
+---
+
+## ❓ Problem
+
+Traditional Open Tibia Server AACs faced several challenges:
+
+1. Outdated PHP-based systems with security vulnerabilities
+2. Poor user experience and non-responsive designs
+3. Lack of real-time server status monitoring
+4. Insecure session management and data handling
+5. Limited character and guild management features
+
+---
+
+## 🎯 Goal
+
+1. Create a modern, secure AAC using current web technologies
+2. Implement real-time server monitoring via socket connections
+3. Provide responsive design for all device types
+4. Ensure secure user authentication and data protection
+5. Build scalable architecture for growing OT communities
+
+---
+
+## ✨ Solution
+
+### Technical Architecture
+
+The application uses a modern tech stack:
+
+- **Next.js** for server-side rendering and optimal performance
+- **TypeScript** for type safety and better development experience
+- **MySQL** for reliable data storage
+- **Socket connections** for real-time protocol status parsing
+- **Encrypted cookies** for secure session management
+
+### Key Features Implemented
+
+1. **Account Management:** Secure registration, login, and character creation
+2. **Real-time Monitoring:** Live server status and player count via socket protocol
+3. **Character System:** Complete character management with statistics
+4. **Guild System:** Guild creation and management features
+5. **Security:** Encrypted sessions and secure API endpoints
+6. **Responsive Design:** Mobile-first approach for all devices
+
+---
+
+## ⚙️ Technical Implementation
+
+### Database Design
+
+Created comprehensive MySQL schema supporting:
+
+- User accounts with secure password hashing
+- Character data with statistics and inventory
+- Guild system with ranks and member management
+- Server configuration and status tracking
+
+### Real-time Features
+
+- Socket-based server monitoring
+- Live player count updates
+- Real-time guild activity tracking
+
+### Security Measures
+
+- Encrypted cookie sessions
+- SQL injection prevention
+- XSS protection
+- Rate limiting for API endpoints
+
+---
+
+## 🧪 Challenges and Learnings
+
+1. **Protocol Integration:** Implementing socket-based communication with OT servers required deep understanding of the protocol structure
+2. **Security Implementation:** Balancing user experience with robust security measures in a gaming environment
+3. **Performance Optimization:** Ensuring fast loading times while handling real-time data updates
+4. **Cross-platform Compatibility:** Supporting various OT server distributions and versions
+
+---
+
+## ✨ Final Thoughts
+
+1. **Modern Architecture Pays Off:** Using Next.js and TypeScript significantly improved development speed and code maintainability
+2. **Security First Approach:** Implementing proper security measures from the start prevented common vulnerabilities found in legacy AACs
+3. **Community Impact:** The project received positive feedback from the OT community and influenced other AAC projects to modernize
+4. **Open Source Benefits:** Making the project open source allowed community contributions and faster bug resolution
+
+---

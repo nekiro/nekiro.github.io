@@ -1,0 +1,8 @@
+{
+	"plugins": ["prettier-plugin-astro"],
+	"useTabs": true,
+	"trailingComma": "es5",
+	"semi": true,
+	"singleQuote": false,
+	"printWidth": 150
+}
