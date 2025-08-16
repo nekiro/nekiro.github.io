@@ -44,7 +44,7 @@ interface WorkExperience {
  */
 const workExperience: WorkExperience[] = [
 	{
-		title: "Software Engineer",
+		title: "Senior Software Engineer",
 		startDate: "2022-11-01",
 		company: "Trans.eu",
 		location: "Poland",
