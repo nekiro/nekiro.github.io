@@ -29,9 +29,11 @@ const allProjects = (await getCollection("projects")).sort((a, b) => b.data.star
 		<section class="flex flex-col gap-8">
 			{
 				allProjects.length > 0 ? (
-					allProjects.map((project: Project) => (
-						<ProjectCardList id={project.id} title={project.data.title} tags={project.data.tags} cover={project.data.cover} />
-					))
+					allProjects
+						.sort((a, b) => b.data.title.localeCompare(a.data.title))
+						.map((project: Project) => (
+							<ProjectCardList id={project.id} title={project.data.title} tags={project.data.tags} cover={project.data.cover} />
+						))
 				) : (
 					<p>No projects found.</p>
 				)

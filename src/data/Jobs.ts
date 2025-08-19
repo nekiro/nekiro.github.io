@@ -47,7 +47,7 @@ const workExperience: WorkExperience[] = [
 		title: "Senior Software Engineer",
 		startDate: "2022-11-01",
 		company: "Trans.eu",
-		location: "Poland",
+		location: "Remote",
 		description:
 			"Maintained authentication microservices for the logistics platform, focusing on OAuth implementation and legacy code modernization.",
 		goals: [
@@ -63,13 +63,29 @@ const workExperience: WorkExperience[] = [
 		startDate: "2021-01-01",
 		endDate: "2024-07-01",
 		company: "V&X Limited",
-		location: "Gibraltar",
+		location: "Remote",
 		description:
 			"During my time at V&X Limited, I developed and maintained 2D game engine inspired by the Dragon Ball anime (https://saiyansreturn.com).",
 		goals: [
 			"I've added new functionalities and maintained existing features using C++ and Lua.",
 			"I've created essential services from scratch, such as a status service built with TypeScript and Node.js using the NestJS framework, which monitored engine status and collected metrics and logs, later showing them in Grafana dashboard and Kibana",
 			"I've managed the infrastructure, implemented CI pipelines for automatic deployments, and extensively used Docker to containerize services for streamlined deployment on target machine.",
+		],
+		currentJob: false,
+	},
+	{
+		title: "Node.js Developer",
+		startDate: "2018-02-01",
+		endDate: "2021-01-01",
+		company: "Upwork",
+		location: "Remote",
+		description:
+			"Freelance Node.js development delivering multiple web applications and improving client functionality through modern development practices.",
+		goals: [
+			"Successfully delivered multiple web applications that met client specifications and improved functionality.",
+			"Employed TypeScript and JavaScript to enhance code maintainability and readability.",
+			"Integrated ESLint and Joi for code quality and validation, leading to a 25% reduction in runtime errors.",
+			"Collaborated with clients to gather requirements, ensuring alignment with their business goals and objectives.",
 		],
 		currentJob: false,
 	},

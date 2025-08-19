@@ -1,7 +1,8 @@
 export const SITE = {
 	website: "https://nekiro.dev",
 	title: "Marcin Jałocha",
-	description: "Marcin Jałocha's Portfolio",
+	description:
+		"Senior Software Engineer specializing in full-stack development with React, Node.js, and TypeScript. Showcasing innovative projects from API libraries to mobile apps and creative platforms.",
 	tags: [
 		"portfolio",
 		"Resume cv",
