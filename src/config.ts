@@ -33,7 +33,7 @@ export const ME = {
 			description: "Years of Experience",
 		},
 		{
-			value: 5,
+			value: 12,
 			description: "Completed Projects",
 		},
 	],
