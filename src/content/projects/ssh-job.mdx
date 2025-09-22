@@ -1,0 +1,272 @@
+---
+title: SSH Job
+summary: GitHub Action for automated SSH deployment and remote server management. Built with TypeScript, it provides easy programmatic SSH access for CI/CD pipelines, enabling secure remote command execution with comprehensive configuration options.
+tags:
+  - GitHub Actions
+  - TypeScript
+  - SSH
+  - DevOps
+  - CI/CD
+  - Automation
+  - Remote Server
+  - Deployment
+startDate: 2021-03-01
+endDate: 2023-08-12
+author: Marcin Jałocha
+url: https://github.com/nekiro/ssh-job
+cover: "./images/ssh-job/ssh_job_cover.png"
+ogImage: "./images/ssh-job/ssh_job_cover.png"
+---
+
+## Table of Contents
+
+1. [Overview](#overview)
+2. [What is SSH?](#what-is-ssh)
+3. [Role](#role)
+4. [Problem](#problem)
+5. [Goal](#goal)
+6. [Solution](#solution)
+7. [Technical Implementation](#technical-implementation)
+8. [Features](#features)
+9. [Usage Examples](#usage-examples)
+10. [Challenges and Learnings](#challenges-and-learnings)
+11. [Final Thoughts](#final-thoughts)
+
+---
+
+## Overview
+
+**SSH Job** is a powerful GitHub Action that simplifies automated deployment and remote server management through SSH connections. Built with TypeScript, this action provides developers with an easy-to-use tool for executing commands on remote servers as part of CI/CD pipelines, enabling secure and automated deployments with minimal configuration.
+
+The action abstracts the complexity of SSH connections and command execution, making it accessible to developers who need reliable remote server automation without dealing with low-level SSH implementation details.
+
+---
+
+## What is SSH?
+
+**SSH (Secure Shell)** is a cryptographic network protocol that provides secure communication over an unsecured network. It's widely used for:
+
+- **Remote Server Access:** Secure login to remote computers and servers
+- **Command Execution:** Running commands on remote systems
+- **File Transfer:** Secure copying of files between systems
+- **Tunneling:** Creating secure tunnels for other protocols
+- **Port Forwarding:** Forwarding network traffic through secure connections
+
+### Key SSH Features:
+
+- **Encryption:** All data transmitted over SSH is encrypted
+- **Authentication:** Multiple authentication methods (password, key-based, etc.)
+- **Integrity:** Data integrity verification prevents tampering
+- **Compression:** Optional data compression for better performance
+- **Portability:** Works across different operating systems and platforms
+
+### In DevOps and CI/CD Context:
+
+SSH is essential for:
+
+- **Automated Deployments:** Deploying applications to remote servers
+- **Server Management:** Remote administration and maintenance
+- **Configuration Management:** Updating server configurations
+- **Monitoring and Logging:** Collecting data from remote systems
+- **Backup Operations:** Automated backup processes
+
+---
+
+## 👨‍💻 Role
+
+**DevOps Engineer** and **GitHub Actions Developer**
+
+---
+
+## ❓ Problem
+
+Developers and DevOps teams faced several challenges when implementing automated deployments:
+
+1. **Complex SSH Setup:** Manual SSH configuration and key management was time-consuming and error-prone
+2. **Security Concerns:** Hardcoded credentials and insecure connection methods
+3. **CI/CD Integration:** Difficulty integrating SSH operations into GitHub Actions workflows
+4. **Error Handling:** Lack of robust error handling and logging for remote operations
+5. **Environment Management:** Challenges in passing secrets and environment variables securely
+6. **Cross-Platform Issues:** Inconsistent behavior across different operating systems
+7. **Limited Documentation:** Lack of clear examples and documentation for SSH automation
+
+---
+
+## 🎯 Goal
+
+1. Create a user-friendly GitHub Action for SSH operations
+2. Provide secure authentication methods (key-based and password)
+3. Enable easy integration with existing CI/CD pipelines
+4. Support environment variable passing and secret management
+5. Implement comprehensive error handling and logging
+6. Ensure cross-platform compatibility
+7. Provide extensive documentation and examples
+
+---
+
+## ✨ Solution
+
+### Action Architecture
+
+SSH Job provides a comprehensive solution for remote server automation:
+
+- **TypeScript Implementation:** Type-safe development with better maintainability
+- **Flexible Authentication:** Support for both SSH keys and password authentication
+- **Environment Integration:** Seamless integration with GitHub secrets and environment variables
+- **Command Execution:** Support for single commands and multi-line scripts
+- **Error Handling:** Comprehensive error detection and user feedback
+
+### Core Functionality
+
+- **SSH Connection Management:** Automatic connection establishment and cleanup
+- **Command Execution:** Execute single or multiple commands on remote servers
+- **Environment Variable Support:** Pass secrets and environment variables securely
+- **Flexible Configuration:** Extensive configuration options for different use cases
+- **Logging and Debugging:** Detailed logging for troubleshooting and monitoring
+
+---
+
+## ⚙️ Technical Implementation
+
+### Technology Stack
+
+- **TypeScript:** Primary language for type safety and maintainability
+- **Node.js:** Runtime environment for the action
+- **SSH2 Library:** Low-level SSH client implementation
+- **GitHub Actions API:** Integration with GitHub's action system
+- **Jest:** Testing framework for comprehensive test coverage
+
+### Key Components
+
+- **SSH Client:** Core SSH connection and command execution logic
+- **Configuration Parser:** Handles action inputs and validation
+- **Environment Manager:** Manages secrets and environment variables
+- **Command Executor:** Handles command execution and output capture
+- **Error Handler:** Comprehensive error detection and reporting
+- **Logger:** Detailed logging for debugging and monitoring
+
+### Security Features
+
+- **Secret Management:** Secure handling of SSH keys and passwords
+- **Environment Isolation:** Proper isolation of sensitive data
+- **Input Validation:** Comprehensive validation of all inputs
+- **Error Sanitization:** Safe error messages without exposing sensitive data
+
+---
+
+## 🚀 Features
+
+### Core Features
+
+- **SSH Key Authentication:** Support for private key-based authentication
+- **Password Authentication:** Alternative authentication method for convenience
+- **Multi-Command Support:** Execute multiple commands in sequence
+- **Environment Variable Export:** Pass GitHub secrets to remote commands
+- **Flexible Host Configuration:** Support for custom ports and host configurations
+- **Command Output Capture:** Capture and display command outputs
+
+### Advanced Features
+
+- **Secret Filtering:** Ignore specific environment variables for security
+- **Action Options Export:** Access action parameters in remote commands
+- **Passphrase Support:** Support for encrypted SSH keys
+- **Custom Port Support:** Connect to SSH servers on non-standard ports
+- **Comprehensive Logging:** Detailed logs for debugging and monitoring
+- **Error Recovery:** Robust error handling and recovery mechanisms
+
+### Integration Features
+
+- **GitHub Actions Native:** Seamless integration with GitHub Actions workflows
+- **Marketplace Ready:** Available on GitHub Marketplace for easy installation
+- **Version Management:** Semantic versioning with release management
+- **Documentation:** Comprehensive documentation and examples
+
+---
+
+## 📝 Usage Examples
+
+### Basic SSH Key Authentication
+
+```yaml
+- name: Deploy to Server
+  uses: nekiro/ssh-job@main
+  with:
+    host: ${{ secrets.HOST }}
+    key: ${{ secrets.KEY }}
+    user: ${{ secrets.USER }}
+    command: |
+      ls -la
+      cd /var/www
+      git pull origin main
+```
+
+### Environment Variable Integration
+
+```yaml
+- name: Deploy with Environment Variables
+  uses: nekiro/ssh-job@main
+  with:
+    host: ${{ secrets.HOST }}
+    key: ${{ secrets.KEY }}
+    user: ${{ secrets.USER }}
+    envs: ${{ toJson(secrets) }}
+    command: |
+      echo "Deploying to $ENVIRONMENT"
+      mkdir -p $DEPLOY_PATH
+      cp -r build/* $DEPLOY_PATH/
+```
+
+### Multi-Server Deployment
+
+```yaml
+- name: Deploy to Multiple Servers
+  uses: nekiro/ssh-job@main
+  with:
+    host: ${{ secrets.PROD_HOST }}
+    key: ${{ secrets.PROD_KEY }}
+    user: ${{ secrets.PROD_USER }}
+    command: |
+      systemctl restart nginx
+      systemctl restart myapp
+      echo "Production deployment complete"
+```
+
+---
+
+## 🧪 Challenges and Learnings
+
+1. **SSH Protocol Complexity:** Understanding and implementing proper SSH connection handling required deep knowledge of the protocol and its various authentication methods
+
+2. **Security Considerations:** Ensuring secure handling of credentials and sensitive data while maintaining usability was challenging
+
+3. **Cross-Platform Compatibility:** Making the action work consistently across different operating systems and SSH implementations
+
+4. **Error Handling:** Implementing comprehensive error handling for various SSH connection and command execution failures
+
+5. **Environment Variable Management:** Creating a secure and flexible system for passing environment variables and secrets to remote commands
+
+6. **GitHub Actions Integration:** Understanding the GitHub Actions API and ensuring proper integration with the platform
+
+---
+
+## ✨ Final Thoughts
+
+1. **Community Impact:** The action significantly simplified SSH automation for the GitHub Actions community, with over 10 stars and active usage
+
+2. **DevOps Automation:** This project demonstrated the power of creating focused, single-purpose tools that solve specific problems in the DevOps workflow
+
+3. **Security Focus:** Working on this project reinforced the importance of security-first design when handling credentials and remote access
+
+4. **Open Source Benefits:** Making the action open source allowed the community to contribute improvements and use cases, leading to a more robust tool
+
+5. **GitHub Actions Ecosystem:** The project contributed to the growing ecosystem of GitHub Actions, making automation more accessible to developers
+
+6. **Documentation Importance:** Creating comprehensive documentation and examples was crucial for adoption, especially for a tool that handles sensitive operations
+
+7. **TypeScript Benefits:** Using TypeScript for this project provided better maintainability and fewer runtime errors, which is crucial for infrastructure tools
+
+8. **Marketplace Success:** The action's availability on GitHub Marketplace made it easily discoverable and installable by other developers
+
+---
+
+_Simplifying SSH automation for the GitHub Actions community_
