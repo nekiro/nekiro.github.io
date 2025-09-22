@@ -1,0 +1,222 @@
+---
+title: Nekiro Rcc Editor
+summary: Electron-based desktop application for editing Qt Resource Collection (.rcc) files. Built with React and TypeScript, it enables easy replacement and extraction of assets in compiled Qt resource files, particularly useful for Tibia game client UI modifications.
+tags:
+  - Electron
+  - React
+  - TypeScript
+  - Qt
+  - Desktop Application
+  - File Editor
+  - Game Development
+  - Open Tibia
+startDate: 2022-06-01
+endDate: 2023-08-25
+author: Marcin Jałocha
+url: https://github.com/nekiro/Nekiro-Rcc-Editor
+cover: "./images/nekiro-rcc-editor/rcc_editor_cover.png"
+ogImage: "./images/nekiro-rcc-editor/rcc_editor_cover.png"
+---
+
+## Table of Contents
+
+1. [Overview](#overview)
+2. [What are Qt Resource Collection (.rcc) Files?](#what-are-qt-resource-collection-rcc-files)
+3. [Role](#role)
+4. [Problem](#problem)
+5. [Goal](#goal)
+6. [Solution](#solution)
+7. [Technical Implementation](#technical-implementation)
+8. [Features](#features)
+9. [Challenges and Learnings](#challenges-and-learnings)
+10. [Final Thoughts](#final-thoughts)
+
+---
+
+## Overview
+
+**Nekiro Rcc Editor** is a powerful desktop application built with Electron, React, and TypeScript that simplifies the process of editing Qt Resource Collection (.rcc) files. This tool is particularly valuable for game developers and modders working with Tibia game clients, as it provides an intuitive interface for replacing and extracting assets stored in compiled Qt resource files.
+
+The application addresses the complex challenge of working with binary resource files by providing a user-friendly graphical interface, making it accessible to developers who need to modify game UI elements, images, fonts, and styles.
+
+---
+
+## What are Qt Resource Collection (.rcc) Files?
+
+**Qt Resource Collection (.rcc) files** are compiled binary files used by Qt applications to store and manage resources such as:
+
+- **Images and Icons:** UI graphics, sprites, and visual assets
+- **Fonts:** Custom typefaces and text rendering resources
+- **Stylesheets:** CSS-like styling information for UI components
+- **Data Files:** Configuration files, translations, and other static data
+- **Media Assets:** Audio files, videos, and other multimedia content
+
+### Key Characteristics:
+
+- **Binary Format:** Compiled from human-readable resource files (.qrc) into efficient binary format
+- **Embedded Resources:** Resources are embedded directly into the application executable
+- **Platform Independent:** Works across different operating systems
+- **Efficient Access:** Fast runtime access to embedded resources
+- **Version Control:** Single file contains all application resources
+
+### In Game Development Context:
+
+In the context of Tibia game clients, .rcc files are crucial for:
+
+- **UI Customization:** Modifying game interface elements and layouts
+- **Asset Replacement:** Swapping game graphics, icons, and visual elements
+- **Theme Development:** Creating custom visual themes and styles
+- **Localization:** Managing different language assets and translations
+- **Modding:** Enabling community modifications and custom content
+
+---
+
+## 👨‍💻 Role
+
+**Full-Stack Desktop Application Developer** and **Game Development Tools Creator**
+
+---
+
+## ❓ Problem
+
+Developers and modders working with Tibia game clients faced several challenges:
+
+1. **Complex Binary Format:** .rcc files are compiled binary formats that are difficult to edit manually
+2. **No User-Friendly Tools:** Existing tools for .rcc manipulation were command-line based and complex
+3. **Asset Management:** Difficulty in replacing and extracting specific resources from compiled files
+4. **UI Modification Challenges:** Hard to modify game interface elements without proper tools
+5. **Error-Prone Process:** Manual editing often led to corrupted files and broken applications
+6. **Limited Documentation:** Lack of clear documentation for working with .rcc files
+7. **Cross-Platform Issues:** Need for tools that work across different operating systems
+
+---
+
+## 🎯 Goal
+
+1. Create an intuitive desktop application for .rcc file editing
+2. Provide graphical interface for resource replacement and extraction
+3. Enable easy modification of Tibia game client assets
+4. Support both loading and compiling .rcc files
+5. Ensure cross-platform compatibility
+6. Provide comprehensive error handling and validation
+7. Make the tool accessible to non-technical users
+
+---
+
+## ✨ Solution
+
+### Application Architecture
+
+Nekiro Rcc Editor provides a comprehensive solution for .rcc file management:
+
+- **Electron Framework:** Cross-platform desktop application using web technologies
+- **React Frontend:** Modern, responsive user interface
+- **TypeScript:** Type-safe development with better maintainability
+- **File Management:** Robust handling of binary file operations
+- **Resource Preview:** Visual preview of assets before modification
+
+### Core Functionality
+
+- **Load RCC Files:** Open and parse existing .rcc files
+- **Compile RCC Files:** Create new .rcc files from resource collections
+- **Replace Resources:** Swap existing assets with new ones
+- **Extract Assets:** Export individual resources from .rcc files
+- **Resource Preview:** Visual preview of images and other assets
+- **Batch Operations:** Handle multiple resources simultaneously
+
+---
+
+## ⚙️ Technical Implementation
+
+### Technology Stack
+
+- **Electron:** Cross-platform desktop application framework
+- **React:** Modern JavaScript library for building user interfaces
+- **TypeScript:** Typed superset of JavaScript for better development experience
+- **Node.js:** Backend runtime for file system operations
+- **Webpack:** Module bundler for application packaging
+- **rccextended:** Qt RCC library for binary file manipulation
+
+### Key Components
+
+- **Main Process:** Electron main process handling file operations
+- **Renderer Process:** React-based UI for user interaction
+- **File Handler:** Custom module for .rcc file parsing and manipulation
+- **Resource Manager:** Component for managing individual resources
+- **Preview System:** Image and asset preview functionality
+- **Error Handling:** Comprehensive error detection and user feedback
+
+### Build and Distribution
+
+- **Electron Forge:** Application packaging and distribution
+- **Cross-Platform Builds:** Support for Windows, macOS, and Linux
+- **Auto-Updater:** Built-in update mechanism for application maintenance
+- **Installer Generation:** Automated installer creation for easy distribution
+
+---
+
+## 🚀 Features
+
+### Core Features
+
+- **RCC File Loading:** Open and parse existing .rcc files with full resource tree display
+- **Resource Replacement:** Replace individual assets while maintaining file integrity
+- **Asset Extraction:** Export resources to standard file formats
+- **RCC Compilation:** Create new .rcc files from resource collections
+- **Visual Preview:** Preview images and other visual assets before modification
+- **Batch Operations:** Handle multiple resources simultaneously for efficiency
+
+### User Experience
+
+- **Intuitive Interface:** Clean, modern UI designed for ease of use
+- **Drag & Drop:** Simple file operations with drag and drop support
+- **Real-time Preview:** Instant preview of changes before saving
+- **Error Validation:** Comprehensive error checking and user feedback
+- **Progress Indicators:** Visual feedback for long-running operations
+- **Undo/Redo:** Ability to revert changes during editing sessions
+
+### Advanced Features
+
+- **Resource Tree Navigation:** Hierarchical view of all resources in the file
+- **Search and Filter:** Find specific resources quickly
+- **Metadata Display:** Show resource properties and file information
+- **Backup Creation:** Automatic backup of original files before modification
+- **Custom Themes:** Support for different UI themes and customization
+
+---
+
+## 🧪 Challenges and Learnings
+
+1. **Binary File Handling:** Working with Qt's binary format required deep understanding of the file structure and proper parsing techniques
+
+2. **Electron Integration:** Balancing between web technologies and native desktop functionality required careful architecture decisions
+
+3. **Cross-Platform Compatibility:** Ensuring the application works consistently across different operating systems and file systems
+
+4. **Memory Management:** Handling large resource files efficiently without causing memory issues or performance degradation
+
+5. **User Experience:** Creating an intuitive interface for complex binary file operations required extensive user testing and iteration
+
+6. **Error Handling:** Implementing robust error detection and recovery for various file corruption and format issues
+
+---
+
+## ✨ Final Thoughts
+
+1. **Community Impact:** The tool significantly improved the Tibia modding community's ability to customize game clients, leading to more creative and diverse modifications
+
+2. **Technical Growth:** Working with Electron and binary file formats provided valuable experience in desktop application development and low-level file operations
+
+3. **User-Centric Design:** The project taught me the importance of creating intuitive interfaces for complex technical operations, making powerful tools accessible to non-technical users
+
+4. **Open Source Benefits:** Making the tool open source allowed the community to contribute improvements and use cases, leading to a more robust and feature-rich application
+
+5. **Game Development Insights:** Working on this project provided deep insights into how game clients manage resources and how modding tools can enhance the player experience
+
+6. **Cross-Platform Development:** The project demonstrated the power of Electron for creating cross-platform desktop applications using web technologies
+
+7. **Tool Development Philosophy:** This project reinforced the importance of creating tools that solve real problems for specific communities, even if the user base is relatively small
+
+---
+
+_Built with ❤️ for the Tibia and Open Tibia communities_
