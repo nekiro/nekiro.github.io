@@ -1,0 +1,183 @@
+---
+title: ProtobufLib
+summary: C++11 library for Open Tibia development that parses and exports appearance data from Protocol Buffers files. Enables efficient management of game client assets, sprites, and objects for custom Tibia server development.
+tags:
+  - C++
+  - Protocol Buffers
+  - Open Tibia
+  - Game Development
+  - Data Parsing
+  - Asset Management
+startDate: 2022-01-01
+endDate: 2023-12-31
+author: Marcin Jałocha
+url: https://github.com/nekiro/ProtobufLib
+cover: "./images/protobuf-lib/protobuf_cover.png"
+ogImage: "./images/protobuf-lib/protobuf_cover.png"
+---
+
+## Table of Contents
+
+1. [Overview](#overview)
+2. [What is Protocol Buffers?](#what-is-protocol-buffers)
+3. [What is Open Tibia?](#what-is-open-tibia)
+4. [Role](#role)
+5. [Problem](#problem)
+6. [Goal](#goal)
+7. [Solution](#solution)
+8. [Technical Implementation](#technical-implementation)
+9. [Challenges and Learnings](#challenges-and-learnings)
+10. [Final Thoughts](#final-thoughts)
+
+---
+
+## Overview
+
+**ProtobufLib** is a specialized C++11 library designed to streamline Open Tibia development by providing efficient parsing and exporting capabilities for appearance data stored in Protocol Buffers (protobuf) files. This library serves as a crucial development tool for managing game client data, including assets, sprites, and objects, making it easier for developers to create and customize their own Tibia servers.
+
+The library abstracts the complexity of working with protobuf files in the context of game development, providing a clean and efficient interface for extracting and manipulating game data.
+
+---
+
+## What is Protocol Buffers?
+
+**Protocol Buffers (protobuf)** is an open-source, language-neutral, and platform-neutral data serialization format developed by Google. It provides an efficient way to serialize structured data for use in communications protocols, data storage, and more.
+
+Key characteristics of Protocol Buffers:
+- **Language Neutral:** Works across multiple programming languages
+- **Platform Independent:** Functions on any operating system
+- **Efficient:** Compact binary format with fast serialization/deserialization
+- **Extensible:** Easy to add new fields without breaking existing code
+- **Type Safe:** Strong typing system prevents common data errors
+
+In the context of game development, protobuf is particularly valuable for storing complex game data structures like player information, world state, and asset metadata in a compact, efficient format.
+
+---
+
+## What is Open Tibia?
+
+**Open Tibia** is an open-source project that emulates the mechanics and gameplay of the original Tibia MMORPG (Massively Multiplayer Online Role-Playing Game). It provides a platform for developers and gaming enthusiasts to:
+
+- Create and customize their own Tibia servers
+- Experiment with game mechanics and content
+- Develop new features and modifications
+- Build communities around custom game experiences
+
+Open Tibia servers allow for complete customization of the game world, including:
+- Custom maps and environments
+- Modified gameplay mechanics
+- New items, spells, and creatures
+- Custom quests and storylines
+- Server-specific rules and economies
+
+The project enables developers to understand and modify the underlying game systems, making it a valuable educational and creative platform for game development.
+
+---
+
+## 👨‍💻 Role
+
+**C++ Developer** and **Game Development Tools Creator**
+
+---
+
+## ❓ Problem
+
+Open Tibia developers faced several challenges when working with game client data:
+
+1. **Complex Data Format:** Game assets and appearance data were stored in protobuf format, requiring specialized knowledge to parse
+2. **Manual Data Extraction:** No efficient tools existed for extracting and manipulating game client data
+3. **Asset Management:** Difficulty in managing and organizing game sprites, objects, and other visual assets
+4. **Development Bottlenecks:** Time-consuming manual processes slowed down server development and customization
+5. **Data Integrity:** Risk of data corruption when manually editing game files
+6. **Limited Documentation:** Lack of clear documentation for working with Tibia's data structures
+
+---
+
+## 🎯 Goal
+
+1. Create a robust C++ library for parsing protobuf files in Open Tibia context
+2. Provide efficient data extraction and export capabilities
+3. Enable easy manipulation of game assets and appearance data
+4. Improve development workflow for Open Tibia server creators
+5. Ensure data integrity and prevent corruption during data manipulation
+6. Create comprehensive documentation and examples
+
+---
+
+## ✨ Solution
+
+### Library Architecture
+
+ProtobufLib provides a comprehensive solution for Open Tibia data management:
+
+- **Protobuf Parser:** Efficient parsing of protobuf files containing game data
+- **Data Export:** Multiple export formats for different use cases
+- **Asset Management:** Tools for organizing and manipulating game assets
+- **Error Handling:** Robust error detection and recovery mechanisms
+- **Memory Management:** Efficient memory usage for large game datasets
+
+### Key Features
+
+- **Appearance Data Extraction:** Parse and extract visual asset information
+- **Sprite Management:** Handle game sprites and animations
+- **Object Data Processing:** Manage game objects and their properties
+- **Format Conversion:** Convert between different data formats
+- **Validation Tools:** Ensure data integrity and consistency
+
+---
+
+## ⚙️ Technical Implementation
+
+### Core Technologies
+
+- **C++11** for high-performance data processing
+- **Protocol Buffers** for data serialization and parsing
+- **Standard Template Library (STL)** for data structures and algorithms
+- **Memory Management** for efficient handling of large datasets
+
+### Key Components
+
+- **Parser Engine:** Core protobuf parsing functionality
+- **Data Structures:** Custom data structures for game assets
+- **Export Modules:** Various export format implementations
+- **Utility Functions:** Helper functions for common operations
+- **Error Handling:** Comprehensive error detection and reporting
+
+### Performance Optimizations
+
+- **Streaming Parser:** Process large files without loading everything into memory
+- **Caching System:** Cache frequently accessed data for improved performance
+- **Parallel Processing:** Utilize multiple threads for data processing when possible
+- **Memory Pool:** Efficient memory allocation for better performance
+
+---
+
+## 🧪 Challenges and Learnings
+
+1. **Protobuf Complexity:** Understanding and implementing proper protobuf parsing required deep knowledge of the format and its various versions
+
+2. **Memory Management:** Handling large game datasets efficiently while maintaining good performance was challenging
+
+3. **Data Validation:** Ensuring data integrity when parsing and manipulating game files required careful validation logic
+
+4. **Cross-Platform Compatibility:** Making the library work consistently across different operating systems and compilers
+
+5. **Performance Optimization:** Balancing between code readability and performance for large-scale data processing
+
+---
+
+## ✨ Final Thoughts
+
+1. **Community Impact:** The library significantly improved the development experience for Open Tibia server creators, enabling faster and more reliable server development
+
+2. **Technical Growth:** Working with protobuf and game data structures provided valuable experience in low-level data processing and optimization
+
+3. **Open Source Benefits:** Making the library open source allowed the community to contribute improvements and use cases I hadn't considered
+
+4. **Documentation Importance:** Creating comprehensive documentation was crucial for adoption, especially given the technical nature of the library
+
+5. **Performance Focus:** The project taught me the importance of performance optimization when dealing with large datasets and real-time applications
+
+6. **Game Development Insights:** Working on this project provided deep insights into how game data is structured and managed, which is valuable knowledge for any game development work
+
+---
