@@ -1,0 +1,20 @@
+---
+const skills = [
+	"TypeScript", "JavaScript", "Node.js", "React", "Next.js",
+	"NestJS", "Express", "Prisma", "MySQL", "Jest",
+	"C++", "Lua", "Git", "GitHub Actions", "HTML", "Electron",
+];
+---
+
+<section>
+	<p class="text-[10px] uppercase tracking-widest text-muted mb-3">// Skills</p>
+	<div class="flex flex-wrap gap-1.5">
+		{
+			skills.map((skill) => (
+				<span class="text-[11px] px-2.5 py-1 border border-[#333] text-muted hover:border-primary hover:text-primary transition-none cursor-default">
+					{skill}
+				</span>
+			))
+		}
+	</div>
+</section>

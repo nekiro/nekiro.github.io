@@ -1,21 +1,15 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import ProfileInfo from "../components/ProfileInfo.astro";
-import ProfileActionButton from "../components/ProfileActionButton.astro";
-import TabsButtons from "../components/TabsButtons.tsx";
-import ProjectsCC from "@/components/ProjectsCC.astro";
-import AboutMeCC from "../components/AboutMeCC.astro";
-import ProfileFacts from "../components/ProfileFacts.astro";
+import Hero from "../components/Hero.astro";
+import Skills from "../components/Skills.astro";
+import ProjectList from "../components/ProjectList.astro";
 ---
 
-<Layout title="Marcin Jałocha | Portfolio" scrollSmooth={false}>
-	<>
-		<ProfileInfo />
-		<ProfileFacts />
-		<ProfileActionButton />
-		<TabsButtons client:idle>
-			<AboutMeCC slot="about" />
-			<ProjectsCC slot="portfolio" />
-		</TabsButtons>
-	</>
+<Layout title="Marcin Jałocha | Software Engineer" scrollSmooth={false}>
+	<div class="flex flex-col gap-16">
+		<Hero />
+		<Skills />
+		<ProjectList />
+		{/* <BlogSection limit={3} /> */}
+	</div>
 </Layout>

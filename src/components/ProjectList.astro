@@ -1,0 +1,48 @@
+---
+import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
+
+const { limit } = Astro.props;
+
+const allProjects = (await getCollection("projects")).sort((a, b) => b.data.startDate.getTime() - a.data.startDate.getTime());
+const projects = limit ? allProjects.slice(0, limit) : allProjects;
+---
+
+<section>
+	<div class="flex flex-col gap-1 mb-3">
+		<p class="text-[10px] uppercase tracking-widest text-muted">// Projects</p>
+		<p class="text-xs text-muted">Things I've built over the years.</p>
+	</div>
+	<div class="flex flex-col border-t border-[#222]">
+		{
+			projects.map((project) => (
+				<a
+					href={`/projects/${project.id}`}
+					class="group flex items-center justify-between py-3 border-b border-[#222] hover:bg-[#1c1025] -mx-3 px-3 transition-none"
+				>
+					<div class="w-20 h-14 flex-shrink-0 border border-[#333] overflow-hidden mr-4">
+							<Image src={project.data.cover} alt={project.data.title} width={80} height={56} class="w-full h-full object-cover object-top" loading="eager" />
+						</div>
+						<div class="flex flex-col gap-1 min-w-0 flex-1 pr-4">
+						<span class="text-sm font-bold text-fg group-hover:text-primary transition-none uppercase tracking-wide">
+							{project.data.title}
+						</span>
+						<div class="flex flex-wrap gap-1 mt-1">
+							{project.data.tags.slice(0, 4).map((tag) => (
+								<span class="text-[10px] px-1.5 py-0.5 border border-[#444] text-subtle group-hover:border-primary/40 transition-none">
+									{tag}
+								</span>
+							))}
+						</div>
+					</div>
+					<div class="flex items-center gap-2 flex-shrink-0 mt-1">
+						<span class="text-[10px] text-muted hidden sm:block">
+							{project.data.startDate.getFullYear()}
+						</span>
+						<span class="text-muted group-hover:text-primary transition-none text-xs">↗</span>
+					</div>
+				</a>
+			))
+		}
+	</div>
+</section>

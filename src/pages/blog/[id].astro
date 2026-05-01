@@ -1,9 +1,7 @@
 ---
 import { getCollection, render } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
-import BackBtn from "../../components/BackBtn.astro";
 import { Image } from "astro:assets";
-import BackToTop from "../../components/BackToTop.astro";
 
 export async function getStaticPaths() {
 	const posts = await getCollection("posts");
@@ -14,27 +12,38 @@ export async function getStaticPaths() {
 }
 
 const { post } = Astro.props;
-
 const { title, description, publishDate, tags, cover } = post.data;
 
 const { Content } = await render(post);
 ---
 
 <Layout title={title} description={description} imageOg={cover.src.src} scrollSmooth={true}>
-	<>
-		<div class="flex justify-center mt-10">
-			<BackBtn />
+	<div class="flex flex-col gap-8">
+		<div>
+			<a href="/blog" class="text-[10px] uppercase tracking-widest text-muted hover:text-primary transition-none mb-4 inline-block">← Blog</a>
+			<h1 class="text-base font-bold text-fg uppercase tracking-wide">{title}</h1>
+			<div class="flex items-center gap-3 mt-2">
+				<time class="text-[10px] text-muted uppercase tracking-widest" datetime={publishDate.toISOString()}>
+					{publishDate.toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}
+				</time>
+				<span class="text-[#333]">|</span>
+				<div class="flex gap-1.5">
+					{tags.map((tag) => (
+						<span class="text-[10px] px-1.5 py-0.5 border border-[#333] text-muted">#{tag}</span>
+					))}
+				</div>
+			</div>
 		</div>
-		<div class="flex flex-col gap-6 justify-center items-center">
-			<h1 class="text-3xl font-bold text-center">{title}</h1>
-			<p class="text-sm text-n500 dark:text-primary-light">
-				{tags.join(", ")}
-			</p>
-		</div>
-		<Image transition:name={`${post.id}-image`} class="rounded-2xl h-[400px] object-cover" src={cover.src} alt="Main project image" />
-		<article id="article" class="mt-8 prose dark:prose-invert">
+
+		<Image
+			transition:name={`${post.id}-image`}
+			class="w-full object-cover max-h-64 border border-[#222]"
+			src={cover.src}
+			alt={cover.alt ?? title}
+		/>
+
+		<article class="prose prose-sm max-w-none">
 			<Content />
 		</article>
-		<BackToTop />
-	</>
+	</div>
 </Layout>
