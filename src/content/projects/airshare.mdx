@@ -1,0 +1,32 @@
+---
+title: AirShare
+summary: AirPlay for Windows. A desktop app that turns your PC into a clean AirPlay source - stream any app's audio to HomePods and AirPlay 2 speakers.
+tags:
+  - Tauri
+  - Rust
+  - React
+  - TypeScript
+  - Windows
+  - Audio
+startDate: 2024-09-16
+author: Marcin Jałocha
+url: https://www.airshareapp.com/
+cover: "./images/airshare/airshare_cover.png"
+ogImage: "./images/airshare/airshare_cover.png"
+---
+
+## What it is
+
+**AirShare** fills a gap Apple never did: AirPlay on Windows. It turns your desktop into an AirPlay source that feels native, fast, and stable - so your HomePods finally work with your PC.
+
+## Features
+
+- **Per-app audio routing** - send Spotify to the HomePod while the game stays on your headphones
+- **Built-in equalizer** - band adjustments and presets before the audio leaves your machine
+- **Fast output switching** - jump between local speakers and AirPlay targets without fuss
+- **Stable playback** - built to run through a full workday, not just a demo
+- **Minimal interface** - pair a device and you're done
+
+## Under the hood
+
+The app is built with Tauri - a Rust core doing the audio capture and AirPlay streaming, with a React/TypeScript UI on top. Getting per-app audio capture and the AirPlay 2 protocol to behave on Windows is where most of the fun (and pain) lives.

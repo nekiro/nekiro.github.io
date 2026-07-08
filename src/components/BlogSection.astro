@@ -29,7 +29,7 @@ const posts = limit ? allPosts.slice(0, limit) : allPosts;
 						</span>
 						<div class="flex flex-wrap gap-1 mt-1">
 							{post.data.tags.slice(0, 3).map((tag) => (
-								<span class="font-mono text-[10px] px-2 py-0.5 border border-dashed border-muted bg-highlight/50 text-subtle">
+								<span class="font-mono text-xs px-2 py-0.5 border border-dashed border-muted bg-highlight/50 text-subtle">
 									#{tag}
 								</span>
 							))}
