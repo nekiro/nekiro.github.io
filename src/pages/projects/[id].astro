@@ -20,7 +20,7 @@ const { Content } = await render(post);
 <Layout title={title} description={summary} imageOg={ogImage} scrollSmooth={true}>
 	<div class="flex flex-col gap-8">
 		<div>
-			<a href="/" class="font-mono text-[10px] uppercase tracking-widest text-muted hover:text-primary transition-none mb-4 inline-block">← Back</a>
+			<a href="/" class="italic text-sm text-subtle hover:text-primary transition-none mb-4 inline-block">← Back</a>
 			<h1 class="text-3xl font-serif text-fg tracking-wide">{title}</h1>
 			<div class="flex items-center gap-1.5 mt-2 flex-wrap">
 				{tags.map((tag) => (
@@ -42,7 +42,7 @@ const { Content } = await render(post);
 			<a
 				href={url}
 				target="_blank"
-				class="inline-flex items-center gap-1.5 font-mono text-xs text-primary hover:text-primary-hover transition-none uppercase tracking-widest w-fit"
+				class="inline-flex items-center gap-1.5 italic text-base text-primary hover:text-primary-hover transition-none w-fit"
 			>
 				Visit project ↗
 			</a>
