@@ -4,8 +4,6 @@ import mdx from "@astrojs/mdx";
 
 import react from "@astrojs/react";
 
-import tailwind from "@astrojs/tailwind";
-
 import icon from "astro-icon";
 
 import sitemap from "@astrojs/sitemap";
@@ -16,12 +14,13 @@ export default defineConfig({
 	integrations: [
 		mdx(),
 		react(),
-		tailwind({
-			applyBaseStyles: false,
-		}),
 		icon(),
 		sitemap(),
 	],
+	vite: {
+		// ponytail: lightningcss chokes on tailwind 3 output; revisit after tailwind 4 migration
+		build: { cssMinify: "esbuild" },
+	},
 	markdown: {
 		shikiConfig: {
 			theme: "rose-pine-dawn",
