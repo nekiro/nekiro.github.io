@@ -9,33 +9,33 @@ const posts = limit ? allPosts.slice(0, limit) : allPosts;
 
 <section>
 	<div class="flex items-center justify-between mb-3">
-		<p class="text-[10px] uppercase tracking-widest text-muted">// Blog</p>
+		<h2 class="text-2xl font-serif text-fg">Blog</h2>
 		{limit && allPosts.length > limit && (
-			<a href="/blog" class="text-[10px] uppercase tracking-widest text-muted hover:text-primary transition-none">
+			<a href="/blog" class="font-mono text-[10px] uppercase tracking-widest text-muted hover:text-primary transition-none">
 				See all →
 			</a>
 		)}
 	</div>
-	<div class="flex flex-col border-t border-[#222]">
+	<div class="flex flex-col border-t border-border">
 		{
 			posts.map((post) => (
 				<a
 					href={`/blog/${post.id}`}
-					class="group flex items-start justify-between py-3 border-b border-[#222] hover:bg-[#1c1025] -mx-3 px-3 transition-none"
+					class="group flex items-start justify-between py-3 border-b border-border hover:bg-highlight -mx-3 px-3 transition-none"
 				>
 					<div class="flex flex-col gap-1 min-w-0 flex-1 pr-4">
-						<span class="text-sm font-bold text-fg group-hover:text-primary transition-none uppercase tracking-wide">
+						<span class="text-lg text-fg group-hover:text-primary transition-none">
 							{post.data.title}
 						</span>
 						<div class="flex flex-wrap gap-1 mt-1">
 							{post.data.tags.slice(0, 3).map((tag) => (
-								<span class="text-[10px] px-1.5 py-0.5 border border-[#444] text-subtle group-hover:border-primary/40 transition-none">
+								<span class="font-mono text-[10px] px-2 py-0.5 border border-dashed border-muted bg-highlight/50 text-subtle">
 									#{tag}
 								</span>
 							))}
 						</div>
 					</div>
-					<time class="text-[10px] text-muted flex-shrink-0 mt-1 hidden sm:block" datetime={post.data.publishDate.toISOString()}>
+					<time class="font-mono text-[10px] text-muted flex-shrink-0 mt-1 hidden sm:block" datetime={post.data.publishDate.toISOString()}>
 						{post.data.publishDate.toLocaleDateString("en-US", { month: "short", year: "numeric" })}
 					</time>
 				</a>

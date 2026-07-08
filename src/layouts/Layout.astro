@@ -4,7 +4,6 @@ import { cn } from "../lib/utils";
 import "@/styles/globals.css";
 import { AstroFont } from "astro-font";
 
-import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 
 import { SITE } from "@/config";
@@ -35,17 +34,18 @@ const {
 		<AstroFont
 			config={[
 				{
-					name: "Funnel Sans",
+					name: "EB Garamond",
 					src: [],
-					googleFontsURL: "https://fonts.googleapis.com/css2?family=Funnel+Sans:ital,wght@0,300..800;1,300..800&display=swap",
+					googleFontsURL: "https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..700;1,400..700&display=swap",
 					preload: true,
 					display: "swap",
-					fallback: "sans-serif",
+					fallback: "serif",
 				},
 			]}
 		/>
 
-		<meta name="msapplication-TileColor" content="#000000" />
+		<meta name="msapplication-TileColor" content="#8b7fb8" />
+		<meta name="theme-color" content="#8b7fb8" />
 		<meta name="viewport" content="width=device-width" />
 		<meta charset="UTF-8" />
 		<meta name="generator" content={Astro.generator} />
@@ -72,10 +72,16 @@ const {
 		<title>{title}</title>
 		<ClientRouter />
 	</head>
-	<body class="dark font-mono bg-bg antialiased text-fg w-full min-h-screen flex flex-col">
-		<Navbar />
-		<main class="container py-24 flex gap-8 flex-col" role="main" id="top">
-			<slot />
+	<body class="font-serif bg-bg antialiased text-fg w-full min-h-screen flex flex-col">
+		<main class="container py-10 md:py-16 flex flex-col" role="main" id="top">
+			<div class="window">
+				<div class="window-titlebar">
+					<span class="window-title">nekiro.dev</span>
+				</div>
+				<div class="p-6 md:p-8 flex gap-8 flex-col">
+					<slot />
+				</div>
+			</div>
 		</main>
 		<Footer />
 	</body>

@@ -5,7 +5,7 @@
 @layer base {
 	:root {
 		--radius: 0;
-		color-scheme: dark;
+		color-scheme: light;
 	}
 
 	html {
@@ -13,8 +13,8 @@
 	}
 
 	body {
-		background-color: #0a0a0a;
-		color: #e5e5e5;
+		background-color: #8b7fb8;
+		color: #33203e;
 	}
 
 	* {
@@ -26,24 +26,60 @@ main {
 	@apply flex-grow;
 }
 
+/* retro Mac-style window chrome */
+.window {
+	border: 1px solid #33203e;
+	background: #fdeff6;
+	box-shadow: 4px 4px 0 0 #33203e40;
+}
+
+.window-titlebar {
+	position: relative;
+	height: 26px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-bottom: 1px solid #33203e;
+	background: #fdeff6;
+}
+
+.window-titlebar::before {
+	content: "";
+	position: absolute;
+	inset: 6px 8px;
+	background: repeating-linear-gradient(180deg, #33203e 0 1px, transparent 1px 3px);
+}
+
+.window-title {
+	position: relative;
+	z-index: 1;
+	background: #fdeff6;
+	padding: 0 10px;
+	font-family: 'Courier New', Courier, monospace;
+	font-size: 10px;
+	font-weight: bold;
+	letter-spacing: 0.15em;
+	text-transform: uppercase;
+}
+
 /* prose for blog */
 .prose {
-	--tw-prose-body: #e2e2e2;
-	--tw-prose-headings: #ffffff;
-	--tw-prose-lead: #e2e2e2;
-	--tw-prose-links: #a855f7;
-	--tw-prose-bold: #ffffff;
-	--tw-prose-counters: #bbbbbb;
-	--tw-prose-bullets: #888888;
-	--tw-prose-hr: #333333;
-	--tw-prose-quotes: #cccccc;
-	--tw-prose-quote-borders: #444444;
-	--tw-prose-captions: #aaaaaa;
-	--tw-prose-code: #c084fc;
-	--tw-prose-pre-code: #e2e2e2;
-	--tw-prose-pre-bg: #111111;
-	--tw-prose-th-borders: #333333;
-	--tw-prose-td-borders: #222222;
+	--tw-prose-body: #8c3a6b;
+	--tw-prose-headings: #33203e;
+	--tw-prose-lead: #8c3a6b;
+	--tw-prose-links: #c2417f;
+	--tw-prose-bold: #33203e;
+	--tw-prose-counters: #7d5470;
+	--tw-prose-bullets: #9c6f8c;
+	--tw-prose-hr: #e9cfdf;
+	--tw-prose-quotes: #7d5470;
+	--tw-prose-quote-borders: #c2417f;
+	--tw-prose-captions: #9c6f8c;
+	--tw-prose-code: #a02c64;
+	--tw-prose-pre-code: #33203e;
+	--tw-prose-pre-bg: #fff6fa;
+	--tw-prose-th-borders: #e9cfdf;
+	--tw-prose-td-borders: #f3e0ea;
 }
 
 .prose,
@@ -51,31 +87,37 @@ main {
 .prose li,
 .prose ul,
 .prose ol {
-	color: #e2e2e2 !important;
-	font-family: 'Courier New', Courier, monospace;
+	color: #8c3a6b !important;
+	font-family: 'EB Garamond', Georgia, serif;
+	font-size: 1rem;
 }
 
 .prose h1,
 .prose h2,
 .prose h3,
 .prose h4 {
-	color: #ffffff !important;
+	color: #33203e !important;
+	font-family: 'EB Garamond', Georgia, serif;
+	font-weight: 500;
+	letter-spacing: 0;
 }
 
 .prose strong {
-	color: #ffffff !important;
+	color: #33203e !important;
 }
 
 .prose a {
-	color: #a855f7 !important;
+	color: #c2417f !important;
 }
 
 .prose code {
-	color: #c084fc !important;
+	color: #a02c64 !important;
+	font-family: 'Courier New', Courier, monospace;
 }
 
 .prose img {
-	border: 1px solid #222;
+	border: 1px solid #33203e;
+	box-shadow: 3px 3px 0 0 #33203e;
 }
 
 pre {
@@ -83,8 +125,9 @@ pre {
 	z-index: 1;
 	margin: 0;
 	padding: 1.25rem 0;
-	background: #111;
-	border: 1px solid #222;
+	background: #fff6fa;
+	border: 1px solid #33203e;
+	box-shadow: 3px 3px 0 0 #33203e;
 	overflow-x: auto;
 }
 

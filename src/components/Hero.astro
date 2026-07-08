@@ -7,30 +7,35 @@ const { name, profession, contactInfo } = ME;
 
 <section class="flex flex-col gap-6 pt-2">
 	<div class="flex items-start gap-4">
-		<div class="w-14 h-14 overflow-hidden flex-shrink-0 border border-[#333]">
+		<div class="w-14 h-14 overflow-hidden flex-shrink-0 border border-fg shadow-retro-sm">
 			<ProfileImage />
 		</div>
 		<div class="flex flex-col gap-1 pt-1">
 			<div class="flex items-center gap-3 flex-wrap">
-				<h1 class="text-base font-bold text-fg uppercase tracking-wide">{name}</h1>
-				<span class="inline-flex items-center gap-1.5 text-[10px] px-2 py-0.5 border border-primary text-primary font-bold uppercase tracking-widest">
-					<span class="w-1.5 h-1.5 bg-primary animate-pulse"></span>
+				<h1 class="text-3xl font-serif text-fg tracking-wide">{name}</h1>
+				<span
+					class="inline-flex items-center gap-1.5 font-mono text-[10px] px-2 py-0.5 border border-fg bg-mint text-fg font-bold uppercase tracking-widest shadow-retro-sm"
+				>
+					<span class="w-1.5 h-1.5 bg-fg animate-pulse"></span>
 					Open to work
 				</span>
 			</div>
-			<p class="text-xs text-muted uppercase tracking-widest">{profession}</p>
+			<p class="text-base italic text-subtle">{profession}</p>
 		</div>
 	</div>
 
-	<p class="text-sm text-[#ccc] leading-relaxed max-w-xl border-l-2 border-[#444] pl-4">
-		Started coding in 2015 making game bots, got into C++ building a 2D MMORPG server, now focused on web - backend, frontend, and web3.
+	<p class="text-base text-fg-dim leading-relaxed max-w-xl border-l-2 border-primary pl-4">
+		<strong class="text-fg">Software engineer</strong>, bot tinkerer & retro soul. Went from game bots to a C++ 2D MMORPG server to the web - backend,
+		frontend & web3. Co-creating <a href="https://vanture.club/" target="_blank" class="text-primary font-semibold hover:text-primary-hover"
+			>vanture.club</a
+		>.
 	</p>
 
 	<div class="flex items-center gap-2 flex-wrap">
 		<a
 			href={contactInfo.githubLink}
 			target="_blank"
-			class="inline-flex items-center gap-2 text-xs px-4 py-2 bg-primary text-black font-bold uppercase tracking-widest hover:bg-primary-hover transition-none"
+			class="inline-flex items-center gap-2 font-mono text-xs px-4 py-2 bg-primary text-surface font-bold uppercase tracking-widest border border-fg shadow-retro hover:bg-primary-hover transition-none"
 		>
 			<svg viewBox="0 0 24 24" class="w-3.5 h-3.5 fill-current" xmlns="http://www.w3.org/2000/svg">
 				<path
@@ -42,13 +47,13 @@ const { name, profession, contactInfo } = ME;
 		<a
 			href={contactInfo.linkedin}
 			target="_blank"
-			class="inline-flex items-center gap-2 text-xs px-4 py-2 border border-[#333] text-muted hover:bg-[#1a1a1a] hover:text-fg transition-none uppercase tracking-widest"
+			class="inline-flex items-center gap-2 font-mono text-xs px-4 py-2 border border-fg bg-surface text-fg shadow-retro hover:bg-highlight transition-none uppercase tracking-widest"
 		>
 			LinkedIn
 		</a>
 		<a
 			href={`mailto:${contactInfo.email}`}
-			class="inline-flex items-center gap-2 text-xs px-4 py-2 border border-[#333] text-muted hover:bg-[#1a1a1a] hover:text-fg transition-none uppercase tracking-widest"
+			class="inline-flex items-center gap-2 font-mono text-xs px-4 py-2 border border-fg bg-surface text-fg shadow-retro hover:bg-highlight transition-none uppercase tracking-widest"
 		>
 			Email
 		</a>

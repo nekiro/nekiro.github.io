@@ -7,11 +7,11 @@ const skills = [
 ---
 
 <section>
-	<p class="text-[10px] uppercase tracking-widest text-muted mb-3">// Skills</p>
+	<h2 class="text-2xl font-serif text-fg mb-3">Skills</h2>
 	<div class="flex flex-wrap gap-1.5">
 		{
 			skills.map((skill) => (
-				<span class="text-[11px] px-2.5 py-1 border border-[#333] text-muted hover:border-primary hover:text-primary transition-none cursor-default">
+				<span class="font-mono text-[11px] px-2.5 py-1 border border-dashed border-muted bg-highlight/50 text-subtle cursor-default">
 					{skill}
 				</span>
 			))

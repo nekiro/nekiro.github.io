@@ -1,0 +1,44 @@
+---
+import { getEntry } from "astro:content";
+import { Image } from "astro:assets";
+
+const project = await getEntry("projects", "vanture-club");
+if (!project) throw new Error("Featured project 'vanture-club' not found");
+const { title, summary, tags, cover, url } = project.data;
+---
+
+<section>
+	<h2 class="text-2xl font-serif text-fg mb-3">Featured</h2>
+	<div class="border border-fg bg-surface shadow-retro">
+		<a href={url} target="_blank" class="block border-b border-fg overflow-hidden">
+			<Image src={cover} alt={title} width={760} class="w-full max-h-72 object-cover object-top" loading="eager" />
+		</a>
+		<div class="flex flex-col gap-3 p-5">
+			<div class="flex items-center gap-3 flex-wrap">
+				<h3 class="text-2xl font-serif text-fg">{title}</h3>
+				<span class="inline-flex items-center gap-1.5 font-mono text-[10px] px-2 py-0.5 border border-fg bg-sun text-fg font-bold uppercase tracking-widest shadow-retro-sm">
+					★ Main project
+				</span>
+			</div>
+			<p class="text-base text-fg-dim leading-relaxed">{summary}</p>
+			<div class="flex flex-wrap gap-1.5">
+				{tags.map((tag) => <span class="font-mono text-[10px] px-2 py-0.5 border border-dashed border-muted bg-highlight/50 text-subtle">{tag}</span>)}
+			</div>
+			<div class="flex items-center gap-2 flex-wrap mt-1">
+				<a
+					href={url}
+					target="_blank"
+					class="inline-flex items-center gap-2 font-mono text-xs px-4 py-2 bg-primary text-surface font-bold uppercase tracking-widest border border-fg shadow-retro hover:bg-primary-hover transition-none"
+				>
+					Visit vanture.club ↗
+				</a>
+				<a
+					href={`/projects/${project.id}`}
+					class="inline-flex items-center gap-2 font-mono text-xs px-4 py-2 border border-fg bg-surface text-fg shadow-retro hover:bg-highlight transition-none uppercase tracking-widest"
+				>
+					Case study →
+				</a>
+			</div>
+		</div>
+	</div>
+</section>

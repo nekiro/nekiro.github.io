@@ -20,35 +20,35 @@ const { Content } = await render(post);
 <Layout title={title} description={summary} imageOg={ogImage} scrollSmooth={true}>
 	<div class="flex flex-col gap-8">
 		<div>
-			<a href="/" class="text-[10px] uppercase tracking-widest text-muted hover:text-primary transition-none mb-4 inline-block">← Back</a>
-			<h1 class="text-base font-bold text-fg uppercase tracking-wide">{title}</h1>
+			<a href="/" class="font-mono text-[10px] uppercase tracking-widest text-muted hover:text-primary transition-none mb-4 inline-block">← Back</a>
+			<h1 class="text-3xl font-serif text-fg tracking-wide">{title}</h1>
 			<div class="flex items-center gap-1.5 mt-2 flex-wrap">
 				{tags.map((tag) => (
-					<span class="text-[10px] px-1.5 py-0.5 border border-[#333] text-muted">{tag}</span>
+					<span class="font-mono text-[10px] px-2 py-0.5 border border-dashed border-muted bg-highlight/50 text-subtle">{tag}</span>
 				))}
 			</div>
 		</div>
 
 		<Image
 			transition:name={`${post.id}-image`}
-			class="w-full object-cover max-h-64 border border-[#222]"
+			class="w-full object-cover max-h-64 border border-fg shadow-retro"
 			src={cover}
 			alt={"Cover image for " + title}
 		/>
 
-		<p class="text-sm text-muted border-l-2 border-[#333] pl-4">{summary}</p>
+		<p class="text-base text-fg-dim italic border-l-2 border-primary pl-4">{summary}</p>
 
 		{url && (
 			<a
 				href={url}
 				target="_blank"
-				class="inline-flex items-center gap-1.5 text-xs text-primary hover:text-primary-hover transition-none uppercase tracking-widest w-fit"
+				class="inline-flex items-center gap-1.5 font-mono text-xs text-primary hover:text-primary-hover transition-none uppercase tracking-widest w-fit"
 			>
 				Visit project ↗
 			</a>
 		)}
 
-		<div class="border-t border-[#222] pt-8">
+		<div class="border-t border-border pt-8">
 			<article class="prose prose-sm max-w-none">
 				<Content />
 			</article>

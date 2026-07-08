@@ -24,7 +24,7 @@ export default defineConfig({
 	],
 	markdown: {
 		shikiConfig: {
-			theme: "plastic",
+			theme: "rose-pine-dawn",
 			wrap: true,
 		},
 	},
