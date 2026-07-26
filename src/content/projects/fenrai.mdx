@@ -1,0 +1,44 @@
+---
+title: Fenrai
+summary: Discord moderation bot with a dashboard, built as three services in one monorepo - the bot, a hidden internal API that owns the database, and a Next.js dashboard. Automod, cases, raid mitigation, and analytics.
+tags:
+  - Discord.js
+  - Sapphire
+  - AdonisJS
+  - Next.js
+  - React
+  - TypeScript
+  - PostgreSQL
+  - Redis
+  - Docker
+  - CI/CD
+startDate: 2025-12-06
+author: Marcin Jałocha
+url: https://www.fenrai.app
+cover: "./images/fenrai/fenrai_cover.png"
+ogImage: "./images/fenrai/fenrai_cover.png"
+---
+
+## What it is
+
+**Fenrai** is a Discord moderation bot and the dashboard you configure it from. It lives in a single monorepo split into three services: the bot itself, an internal API that owns the database, and a Next.js dashboard for server admins.
+
+## The pieces
+
+- **Bot (Sapphire/discord.js)** - gateway and command handling, moderation and automod features; stateless apart from a short per-guild config cache
+- **Bot API (AdonisJS)** - the only service that touches PostgreSQL, exposed internally only, scales horizontally
+- **Dashboard (Next.js/React/Tailwind)** - auth, configuration, and analytics; never reads bot data directly, everything goes through the API
+- **Infra** - Docker Compose deployment, deploy scripts, GitHub Actions
+
+## Features
+
+- **Moderation** - mutes, bans/tempbans, kicks, warns with strike decay, purge, lockdown and slowmode
+- **Automod** - anti-spam, invite and scam link blocking, word and regex filters, per-channel overrides
+- **Onboarding** - captcha and quiz verification, welcome templates, auto-roles, probation for new members
+- **Cases and logging** - case IDs with evidence and mod notes, full event logs, exportable reports
+- **Raid mitigation** - join rate limits, account-age gates, quarantine role, temporary lockdown mode
+- **Analytics** - actions by type and moderator, automod hit rates, join/leave trends
+
+## Why it's built this way
+
+The interesting constraint was making the bot survive its own infrastructure. The dashboard going down should never take moderation offline, so the bot pulls config from the API with a short TTL and falls back to its last cache when the API is unreachable - slightly stale rules beat no bot at all. Timers and scheduled jobs live in the database rather than in bot memory, so any instance can pick them up and nothing is lost on a restart.
