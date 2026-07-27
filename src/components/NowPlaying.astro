@@ -1,0 +1,52 @@
+<section>
+	<h2 class="text-2xl font-serif text-fg mb-3">On repeat</h2>
+
+	<iframe
+		data-radio
+		src="https://www.vanture.club/embed/radio"
+		allow="autoplay; encrypted-media; clipboard-write"
+		title="Vanture Radio"
+		class="radio block"></iframe>
+</section>
+
+<style>
+	/* natural size is 342x227; the embed confirms it over postMessage and the
+	   script rewrites both custom properties. width stays fluid so the frame
+	   can shrink on narrow screens -- the ratio keeps the height honest. */
+	.radio {
+		width: 100%;
+		max-width: var(--radio-w, 342px);
+		aspect-ratio: var(--radio-ratio, 342 / 227);
+	}
+</style>
+
+<script>
+	const radio = document.querySelector<HTMLIFrameElement>("[data-radio]");
+	const RADIO_ORIGIN = "https://www.vanture.club";
+
+	if (radio) {
+		// the origin check is what stops any other frame on the page from
+		// spoofing a size message and rescaling this one.
+		window.addEventListener("message", (event) => {
+			if (event.origin !== RADIO_ORIGIN) return;
+			if (event.source !== radio.contentWindow) return;
+			if (event.data?.type !== "vanture:embed:size") return;
+
+			const width = Number(event.data.width);
+			const height = Number(event.data.height);
+			if (!(width > 0) || !(height > 0)) return;
+
+			// max-width + ratio rather than a fixed height, so the frame still
+			// scales down cleanly when the column is narrower than its natural size
+			radio.style.setProperty("--radio-w", `${width}px`);
+			radio.style.setProperty("--radio-ratio", `${width} / ${height}`);
+		});
+
+		const requestSize = () => radio.contentWindow?.postMessage({ type: "vanture:embed:request-size" }, RADIO_ORIGIN);
+
+		// this script is deferred, so the frame may have loaded before we
+		// attached the handler -- ask once up front as well
+		radio.addEventListener("load", requestSize);
+		requestSize();
+	}
+</script>
