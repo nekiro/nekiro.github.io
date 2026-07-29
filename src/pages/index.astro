@@ -5,6 +5,7 @@ import Skills from "../components/Skills.astro";
 import FeaturedProject from "../components/FeaturedProject.astro";
 import ProjectList from "../components/ProjectList.astro";
 import NowPlaying from "../components/NowPlaying.astro";
+import BlogSection from "../components/BlogSection.astro";
 ---
 
 <Layout title="Marcin Jałocha | Software Engineer" scrollSmooth={false}>
@@ -14,6 +15,6 @@ import NowPlaying from "../components/NowPlaying.astro";
 		<NowPlaying />
 		<FeaturedProject />
 		<ProjectList exclude="vanture-club" />
-		{/* <BlogSection limit={3} /> */}
+		<BlogSection limit={3} />
 	</div>
 </Layout>
