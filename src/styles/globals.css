@@ -26,7 +26,7 @@ main {
 	@apply flex-grow;
 }
 
-/* retro Mac-style window chrome */
+/* Mac-style window chrome */
 .window {
 	border: 1px solid #33203e;
 	background: #fdeff6;

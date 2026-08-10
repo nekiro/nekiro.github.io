@@ -22,7 +22,7 @@ const projects = limit ? allProjects.slice(0, limit) : allProjects;
 					href={`/projects/${project.id}`}
 					class="group flex items-center justify-between py-3 border-b border-border hover:bg-highlight -mx-3 px-3 transition-none"
 				>
-					<div class="w-20 h-14 flex-shrink-0 border border-fg shadow-retro-sm overflow-hidden mr-4">
+					<div class="w-20 h-14 flex-shrink-0 border border-fg shadow-hard-sm overflow-hidden mr-4">
 							<Image src={project.data.cover} alt={project.data.title} width={80} height={56} densities={[1, 2, 3]} class="w-full h-full object-cover object-top" loading="eager" />
 						</div>
 						<div class="flex flex-col gap-1 min-w-0 flex-1 pr-4">

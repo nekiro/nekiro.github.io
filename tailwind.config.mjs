@@ -33,8 +33,8 @@ export default {
 				mono: ["'Courier New'", "Courier", "monospace"],
 			},
 			boxShadow: {
-				retro: "3px 3px 0 0 #33203e",
-				"retro-sm": "2px 2px 0 0 #33203e",
+				hard: "3px 3px 0 0 #33203e",
+				"hard-sm": "2px 2px 0 0 #33203e",
 			},
 			colors: {
 				bg: "#8b7fb8",

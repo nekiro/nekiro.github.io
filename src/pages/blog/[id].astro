@@ -38,7 +38,7 @@ const { Content } = await render(post);
 		{cover && (
 			<Image
 				transition:name={`${post.id}-image`}
-				class="w-full object-cover max-h-64 border border-fg shadow-retro"
+				class="w-full object-cover max-h-64 border border-fg shadow-hard"
 				src={cover.src}
 				alt={cover.alt ?? title}
 			/>

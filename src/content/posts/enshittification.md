@@ -60,7 +60,7 @@ That was not a technical evolution. It is the three acts again, on a disc I used
 
 Maybe this is why so much of what I build points backwards.
 
-Apologies in advance for the shameless plug - it is the only example I have that I actually built. [Vanture Club](https://vanture.club/) is an internet radio dressed as a vintage pastel desktop - draggable windows, pixel fonts, striped title bars in faded pink and teal, a guestbook, a TV channel, and music that insists it is permanently the summer of 1986. There is no feed. Nothing is optimised for retention. Nobody is being funneled anywhere. It is a place, and the only thing it wants from you is that you hang around.
+Apologies in advance for the shameless plug - it is the only example I have that I actually built. [Vanture Club](https://vanture.club/) is an internet radio dressed as a pastel desktop - draggable windows, pixel fonts, striped title bars in faded pink and teal, a guestbook, a TV channel, and music that insists it is permanently early evening in a warm month. There is no feed. Nothing is optimised for retention. Nobody is being funneled anywhere. It is a place, and the only thing it wants from you is that you hang around.
 
 I know the nostalgia is partly a lie. The era it borrows from had its own corporations and its own quiet cruelties, and I am remembering the aesthetic, not the reality. But building it is the only way I have found to make the thing I miss - software that was simply *for* something, with an end to it - and to sit inside that for a while instead of just complaining that it is gone.
 
