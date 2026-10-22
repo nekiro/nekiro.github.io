@@ -1,8 +1,9 @@
 ---
 import { ClientRouter } from "astro:transitions";
 import { cn } from "../lib/utils";
+import "@fontsource-variable/eb-garamond/wght.css";
+import "@fontsource-variable/eb-garamond/wght-italic.css";
 import "@/styles/globals.css";
-import { AstroFont } from "astro-font";
 
 import Footer from "../components/Footer.astro";
 
@@ -31,19 +32,6 @@ const {
 <!doctype html>
 <html lang={SITE.lang ?? "en"} class={cn({ "scroll-smooth": scrollSmooth })}>
 	<head>
-		<AstroFont
-			config={[
-				{
-					name: "EB Garamond",
-					src: [],
-					googleFontsURL: "https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..700;1,400..700&display=swap",
-					preload: true,
-					display: "swap",
-					fallback: "serif",
-				},
-			]}
-		/>
-
 		<meta name="msapplication-TileColor" content="#8b7fb8" />
 		<meta name="theme-color" content="#8b7fb8" />
 		<meta name="viewport" content="width=device-width" />

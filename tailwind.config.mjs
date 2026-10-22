@@ -29,7 +29,7 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				serif: ["'EB Garamond'", "Georgia", "serif"],
+				serif: ["'EB Garamond Variable'", "'EB Garamond'", "Georgia", "serif"],
 				mono: ["'Courier New'", "Courier", "monospace"],
 			},
 			boxShadow: {

@@ -88,7 +88,7 @@ main {
 .prose ul,
 .prose ol {
 	color: #8c3a6b !important;
-	font-family: 'EB Garamond', Georgia, serif;
+	font-family: 'EB Garamond Variable', 'EB Garamond', Georgia, serif;
 	font-size: 1rem;
 }
 
@@ -97,7 +97,7 @@ main {
 .prose h3,
 .prose h4 {
 	color: #33203e !important;
-	font-family: 'EB Garamond', Georgia, serif;
+	font-family: 'EB Garamond Variable', 'EB Garamond', Georgia, serif;
 	font-weight: 500;
 	letter-spacing: 0;
 }
